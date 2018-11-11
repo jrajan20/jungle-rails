@@ -1,6 +1,6 @@
 <h1>Registration</h1>
 
-<%= form_for @user do |f|%>
+<%= form_for :user, url: '/users' do |f|%>
 	<% if @user.errors.any? %>
 		<div class = "error_messages">
 			<h2>Form is invalid</h2>
@@ -12,12 +12,8 @@
 		</div>
 	<%end%>
 	<div class="field">
-		<%= f.label :firstname %><br/>
-		<%= f.text_field :firstname%>
-	</div>
-	<div class="field">
-		<%= f.label :lastname %><br/>
-		<%= f.text_field :lastname%>
+		<%= f.label :name %><br/>
+		<%= f.text_field :name%>
 	</div>
 	<div class="field">
 		<%= f.label :email %><br/>
