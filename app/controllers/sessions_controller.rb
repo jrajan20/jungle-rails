@@ -6,16 +6,14 @@ class SessionsController < ApplicationController
   	if @user && @user.authenticate(params[:password])
   		session[:user_id] = @user.id
   		redirect_to '/', notice: "Logged in!"
-  	else
-  		
+  	else  		
   		redirect_to "/login"
-
   	end
   end
 
   def destroy
   	session[:user_id] = nil
-  	redirect_to '/login', notice: "Logged Out"
+  	redirect_to '/logout', notice: "Logged Out"
   end
 
 end
