@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Order Details:</h1>
+    <% @order.line_items.each do |item| %>
+     <li> 
+      Product: <p><%= item.product.name %></p>
+      Quantity: <p><%= item.quantity %></p>
+    </li>
+    <%end%>
+    <p>
+      Total: $<%= @order.total %>
+    </p>
+    <p>Thank you for shopping with Jungle! Have a great day!</p>
+  </body>
