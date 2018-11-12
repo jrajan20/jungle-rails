@@ -134,3 +134,35 @@ cat3.products.create!({
 
 
 puts "DONE!"
+
+# Ratings
+
+puts "Adding Ratings"
+
+Rating.create!({
+  description: 'This helped me get over my divorce!',
+  rating: "5",
+  user_id: 3,
+  product_id: 3
+})
+
+Rating.create!({
+  description: 'Needs to be more edgy!',
+  rating: "3",
+  user_id: 4,
+  product_id: 6
+})
+
+Rating.create!({
+  description: 'Garbage, I would rather give money to delete this product out of existance!',
+  rating: "1",
+  user_id: 1,
+  product_id: 8
+})
+
+Rating.create!({
+  description: 'This product cured my terminal illness.',
+  rating: "5",
+  user_id: 2,
+  product_id: 9
+})
