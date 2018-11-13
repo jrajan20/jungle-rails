@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
+    @ratings = @product.ratings.order(created_at: :desc)
+    @rating = @product.ratings.create
   end
 
 end

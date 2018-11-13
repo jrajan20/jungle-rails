@@ -26,6 +26,47 @@
       </div>
     </div>
 
+    <div>
+      <br/>
+    <%if current_user%>
+    <h3>Write a Review</h3>
+      <div class= 'create-review'>
+         <%= form_for [@product, @rating] do |f|%>
+          <h3><%=current_user.name%><h3/>
+          <div class="field">
+            <%= f.label :Comments %>
+            <%= f.text_field :description%>
+          </div>
+          <br/>
+          <div class="field">
+            <%= f.label :rating %>
+            <%= f.select :rating,[['1','1'],['2','2'],['3','3'],['4','4'],['5','5']]%>
+          </div>
+          <br/>
+          <%= f.submit 'Submit Review' %>
+        <%end%>
+      </div>
+    <%end%>
+      <br/>
+      <h3>Reviews:</h3>
+  
+      <%@ratings.each do |rating|%>
+        <div class = "ratings">
+          <h3><%=rating.user.name%><h3/>
+          <p><%=rating.description%>
+          </p>
+          <h4><%=rating.rating.to_i%>/5
+          </h4>
+          <br/>
+          <%if current_user and current_user.id == rating.user.id%>
+            <%= link_to fa_icon('trash'), product_rating_path(@product, rating), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+            <br/>
+          <%end%>
+        </div>
+      <%end%>
+      <br/>
+      <br/>
+    </div> 
   </article>
 
 </section>
