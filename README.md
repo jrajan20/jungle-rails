@@ -16,6 +16,9 @@ A mini e-commerce application built with Rails 4.2
 !["Reviews when user not logged in"](https://github.com/jrajan20/jungle-rails/blob/master/Screenshots/Screenshot%20from%202018-11-12%2023-46-46.png)
 
 
+!["Categories"](https://github.com/jrajan20/jungle-rails/blob/master/Screenshots/Screenshot%20from%202018-11-12%2023-25-32.png)
+
+
 !["My Cart"](https://github.com/jrajan20/jungle-rails/blob/master/Screenshots/Screenshot%20from%202018-11-12%2023-21-31.png)
 
 
@@ -24,7 +27,6 @@ A mini e-commerce application built with Rails 4.2
 
 !["My Order"](https://github.com/jrajan20/jungle-rails/blob/master/Screenshots/Screenshot%20from%202018-11-12%2023-23-37.png)
 
-!["Categories"](https://github.com/jrajan20/jungle-rails/blob/master/Screenshots/Screenshot%20from%202018-11-12%2023-25-32.png)
 
 
 
