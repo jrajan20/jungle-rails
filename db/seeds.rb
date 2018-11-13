@@ -108,7 +108,7 @@ cat2.products.create!({
   price: 2_026.29
 })
 
-cat3.products.create!({
+hipster = cat3.products.create!({
   name:  'Optimal Sleeping Bed',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture1.jpg'),
@@ -116,7 +116,7 @@ cat3.products.create!({
   price: 3_052.00
 })
 
-cat3.products.create!({
+chair = cat3.products.create!({
   name:  'Electric Chair',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture2.jpg'),
@@ -134,3 +134,35 @@ cat3.products.create!({
 
 
 puts "DONE!"
+
+# Ratings
+
+puts "Adding Ratings"
+
+Rating.create!({
+  description: 'This helped me get over my divorce!',
+  rating: "5",
+  user_id: 3,
+  product_id: hipster.id
+})
+
+Rating.create!({
+  description: 'Needs to be more edgy!',
+  rating: "3",
+  user_id: 3,
+  product_id: hipster.id
+})
+
+Rating.create!({
+  description: 'Garbage, I would rather give money to delete this product out of existance!',
+  rating: "1",
+  user_id: 1,
+  product_id: chair.id
+})
+
+Rating.create!({
+  description: 'This product cured my terminal illness.',
+  rating: "5",
+  user_id: 2,
+  product_id: chair.id
+})

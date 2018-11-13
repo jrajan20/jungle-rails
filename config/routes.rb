@@ -6,14 +6,21 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+  
 
   resources :users
   resources :sessions
+
+
 
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
+  
+  resources :products do
+    resources :ratings, only: [:create,:destroy]
+  end
 
   resource :cart, only: [:show] do
     post   :add_item
